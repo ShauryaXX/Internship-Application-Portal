@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang=''>
+<head>
+<link rel="stylesheet" type="text/css" href="styles.css">
+   <title>SELECTO</title>
+</head>
+<?php
+$connection = mysql_connect('localhost', 'root', ''); 
+mysql_select_db('mydata');
+
+$query = "SELECT * FROM internship";
+$result = mysql_query($query);
+echo "<table>"; 
+while($row = mysql_fetch_array($result)){  
+echo  $row['course'] . "<br></td><td><br>" . $row['company'] . "<br><p>Stipend<br>Rs.</p>" . $row['stipend'] ."<p><br>Duration:</p>".$row['duration']."<p>month<br>Start-date:</p>"$row['start date'];  
+}
+echo "</table>";
+mysql_close();
+?>
+<body>
+
+<div id='cssmenu'>
+<ul>
+   <li class='active'><span>SELECTO</span></a></li>
+   <li><a href='profile.html'><span>Profile</span></a></li>
+   <li><a href='internship.html'><span>Internships</span></a></li>
+   <li class='last'><a href='about.html'><span>About Us</span></a></li>
+   <li class='last'><a href='login.html'><span>Sign Out</span></a></li>
+</ul>
+</div>
+</body>
+<html>
